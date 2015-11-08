@@ -113,6 +113,12 @@ func Warningf(format string, a ...interface{}) {
 	logger.Warn.Output(2, fmt.Sprintf("%s\n", fmt.Sprintf(format, a...)))
 }
 
+func E(err error) {
+	if err != nil {
+		logger.Error.Output(2, err.Error())
+	}
+}
+
 func Error(a ...interface{}) {
 	logger.Error.Output(2, fmt.Sprintf("%s\n", fmt.Sprint(a...)))
 }
@@ -180,4 +186,3 @@ func Println(v ...interface{}) {
 func Printf(format string, v ...interface{}) {
 	logger.INFO.Output(2, fmt.Sprintf("%s\n", fmt.Sprintf(format, v...)))
 }
-
