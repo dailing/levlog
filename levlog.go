@@ -9,6 +9,10 @@ import (
 	"runtime"
 )
 
+func init() {
+	Start(LevelTrace)
+}
+
 const (
 	LevelFatal = 1 // Highest level: important stuff down
 	LevelError = 2 // For example application crashes / exceptions.
