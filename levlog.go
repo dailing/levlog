@@ -137,6 +137,14 @@ func Fatal(a ...interface{}) {
 	os.Exit(1)
 }
 
+func F(err error) {
+	if err == nil{
+		return
+	}
+	logger.Fatal.Output(2, fmt.Sprintf("%s\n", fmt.Sprint(err.Error())))
+	os.Exit(1)
+}
+
 func Fatalf(format string, a ...interface{}) {
 	logger.Fatal.Output(2, fmt.Sprintf("%s\n", fmt.Sprintf(format, a...)))
 	os.Exit(1)
